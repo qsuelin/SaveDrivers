@@ -9,12 +9,12 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 1. Facilitate teaching through video instructional materials
 1. Streamline appointment rescheduling via one-click resolution mechanism
 1. Consolidate disparate information stores about students into single pane interface
-1. Customized authenication system for different instructors
+1. Customized authentication system for different instructors
 
 
 ## Functionality
 ### Day-by-day Dashboard for Appointments
-1. Demonstrate a summary of today's appointments on HomeScreen with each appointment including:
+1. Demonstrate a summary of today's appointments on home screen with each appointment including:
     * time slot
     * name
     * address
@@ -25,50 +25,52 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 
 2. Swipe left/right to navigate to other dates for appointments.
 
-3. Provide calender pick to jump directly to a specific date.
+3. Provide calender picker to jump directly to a specific date.
 
-### Accessible Interaction with Students.
-1. Contact students directly from HomeScreen appointment dashboard via:
+### Rapid Interaction with Students
+1. Contact students directly from home screen appointment dashboard via:
    * phone call
-   * send short message
+   * short message
    * one-click to send template message to next student about estimated arrival time
 
 1. One-click route planning
-    * Embed goolgle map service inside app to generate arrival time automatically
-    * One-click to redirect Google Map by autofilling instructor's current location and next student's pickupaddress.
+    * Embed Google Maps Service inside app to generate arrival time automatically
+    * One-click redirect to Google Maps by autofilling instructor's current location and next student's pickup address.
 
 1. Invoke camera to take photo of student's learning permit and store into database.
 
-1. Invoke payment app inside app and store billing information into database.
+1. Invoke payment inside app and store billing information into database.
 
 
 ### Training Videos
-1. Browse videos in Video section, categorize by themes.
+1. Browse videos in Video section, categorized by themes.
 1. Fully functioning play control embedded.
 
 
 ### Real-time Appointment Handling
-1. Recieve real-time notification for new appointment/rescheduling.
+1. Recieve real-time notification of new appointment/rescheduling existing.
 
-1. Check history notifications all in one section with unread marked.
+1. Check history notifications in one view with read/unread mark.
 
-1. Real-time refreshment of appointment dashboard
+1. Real-time refresh of appointment dashboard
 
 1. Admin options include:
-    * one-click confirm to new coming appointment inside app
-    * one-click redistribution to other instructors's calender
+    * one-click confirmation of new appointments 
+    * one-click redistribution to other instructors' calender(s)
 
 
 ### Student Database
-1. Aggreagete history appointments by student.
+1. Group historical appointments by student.
 
-1. Browse details about given appointment/student in Student section via search tool.
+1. Browse details about given appointment/student in Student section 
+
+1. Use search tool to find items of interest.
 
 1. Edit appointment/student record, including:
-    * personal information: height, weight
+    * personal information: name, height, weight
     * contact information: address, phone, 2nd phone
     * learning permit photo
-    * appointments history
+    * appointment history
     * notes from instructor
     * notes from student
     * learning status
@@ -76,7 +78,7 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 
 ### Authenication and Administration
 1. Dedicated appointment dashboard by individual instructor
-1. Stratificated previlidges among instructors and admin
+1. Role-based access control
 
 # Student Version
 ## Goals
