@@ -9,78 +9,78 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 1. Facilitate teaching through video instructional materials
 1. Streamline appointment rescheduling via one-click resolution mechanism
 1. Consolidate disparate information stores about students into single pane interface
+1. Customized authenication system for different instructors
 
-### Highly readable appointments by day.
-1. Today's appointment on HomeScreen
-show a summary of today's appointments by time.
-each appointment including:
-* time slot
-* name
-* address
-* zipcode
-* phone
-* 2nd phone(optional) 
-* note from student(optional)
 
-2. Swipe left/right to navigate to other dates
+## Functionality
+### Day-by-day Dashboard for Appointments
+1. Demonstrate a summary of today's appointments on HomeScreen with each appointment including:
+    * time slot
+    * name
+    * address
+    * zipcode
+    * phone
+    * 2nd phone(optional) 
+    * note from student(optional)
 
-3. Calender pick for a specific date.
+2. Swipe left/right to navigate to other dates for appointments.
 
-### Easily interact with appointees.
-1. Contact appointees directly from HomeScreen appointment view.
-   * call
-   * message
-   * one-click meassge for estimated arrival time
+3. Provide calender pick to jump directly to a specific date.
 
-1. Invoke google map inside app
+### Accessible Interaction with Students.
+1. Contact students directly from HomeScreen appointment dashboard via:
+   * phone call
+   * send short message
+   * one-click to send template message to next student about estimated arrival time
 
-automatically send current location and next student's address to google.
+1. One-click route planning
+    * Embed goolgle map service inside app to generate arrival time automatically
+    * One-click to redirect Google Map by autofilling instructor's current location and next student's pickupaddress.
 
-1. Invoke camera app to take photo of learning permit inside app
+1. Invoke camera to take photo of student's learning permit and store into database.
 
-put photo into student database
+1. Invoke payment app inside app and store billing information into database.
 
-1. Invoke payment app inside app
 
-put billing and payment information into student database
+### Training Videos
+1. Browse videos in Video section, categorize by themes.
+1. Fully functioning play control embedded.
 
-### Link to training videos
-options:
-* Invoke youtube app inside app
-* embed youtube videos inside app, organize by category
 
-### Notification of appointment change
-1. recieve notification for new appointment/appointment change via app's system notification
+### Real-time Appointment Handling
+1. Recieve real-time notification for new appointment/rescheduling.
 
-follow up options:
-* Invoke email app inside app to confirm(admin)
-* one-click to confirm inside app(admin)
-* one-click to redistribute to other instructors(admin)
+1. Check history notifications all in one section with unread marked.
 
-1. check notifications all in one section
+1. Real-time refreshment of appointment dashboard
 
-1. refresh specific appointment page by date
+1. Admin options include:
+    * one-click confirm to new coming appointment inside app
+    * one-click redistribution to other instructors's calender
 
-### Student database
-1. aggreagete previous appointments infomation by single student
 
-1. search appointment/student in Student section
+### Student Database
+1. Aggreagete history appointments by student.
 
-1. edit appointment/student record
+1. Browse details about given appointment/student in Student section via search tool.
 
-options to edit
+1. Edit appointment/student record, including:
     * personal information: height, weight
-    * contact information: address, phone, optional phone
+    * contact information: address, phone, 2nd phone
     * learning permit photo
-    * appointment history
-    * notes by instructor
-    * notes by student
+    * appointments history
+    * notes from instructor
+    * notes from student
     * learning status
-    * billing information by appointment
+    * billing information per appointment
 
+### Authenication and Administration
+1. Dedicated appointment dashboard by individual instructor
+1. Stratificated previlidges among instructors and admin
 
 # Student Version
-## Feature
+## Goals
+## Features
 ### easily check available appointment
 ### go to official webpage for booking
 ### check instructional videos
