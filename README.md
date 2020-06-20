@@ -7,8 +7,8 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 1. Appointment management focused on near-term deliverables with context-based communications with upcoming students and route planning
 1. Workflow-based onboarding students when begining appointment
 1. Facilitate teaching through video instructional materials
-1. 
-
+1. Streamline appointment rescheduling via one-click resolution mechanism
+1. Consolidate disparate information stores about students into single pane interface
 
 ### Highly readable appointments by day.
 1. Today's appointment on HomeScreen
