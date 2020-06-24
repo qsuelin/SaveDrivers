@@ -5,7 +5,7 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 
 ## High-Level Features
 1. Appointment management focused on near-term deliverables with context-based communications with upcoming students and route planning
-1. Workflow-based onboarding students when begining appointment
+1. Workflow-based onboarding students when beginning appointment
 1. Facilitate teaching through video instructional materials
 1. Streamline appointment rescheduling via one-click resolution mechanism
 1. Consolidate disparate information stores about students into single pane interface
@@ -25,7 +25,7 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 
 2. Swipe left/right to navigate to other dates for appointments.
 
-3. Provide calender picker to jump directly to a specific date.
+3. Provide calendar picker to jump directly to a specific date.
 
 ### Rapid Interaction with Students
 1. Contact students directly from home screen appointment dashboard via:
@@ -48,21 +48,21 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 
 
 ### Real-time Appointment Handling
-1. Recieve real-time notification of new appointment/rescheduling existing.
+1. Receive real-time notification of new appointment/rescheduling existing.
 
 1. Check history notifications in one view with read/unread mark.
 
 1. Real-time refresh of appointment dashboard
 
 1. Admin options include:
-    * one-click confirmation of new appointments 
-    * one-click redistribution to other instructors' calender(s)
+    * one-click confirmation of new appointments
+    * one-click redistribution to other instructors' calendar(s)
 
 
 ### Student Database
 1. Group historical appointments by student.
 
-1. Browse details about given appointment/student in Student section 
+1. Browse details about given appointment/student in Student section
 
 1. Use search tool to find items of interest.
 
@@ -76,7 +76,7 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
     * learning status
     * billing information per appointment
 
-### Authenication and Administration
+### Authentication and Administration
 1. Dedicated appointment dashboard by individual instructor
 1. Role-based access control
 
