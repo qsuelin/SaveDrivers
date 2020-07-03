@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp"
+    android:background="@color/lightBrown">
+
+    <LinearLayout
+        android:id="@+id/time_column"
+        android:layout_width="52dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center_vertical"
+            android:text="10:20am" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/appointment_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/name_row"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:fontFamily="sans-serif-black"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"/>
+
+            <ImageButton
+                android:id="@+id/camera_btn"
+                android:src="@drawable/ic_camera_alt_24px"
+                android:background="@color/lightBrown"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"/>
+
+            <ImageButton
+                android:id="@+id/pay_btn"
+                android:src="@drawable/ic_monetization_on_24px"
+                android:background="@color/lightBrown"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical" />
+
+            <ImageButton
+                android:id="@+id/edit_btn"
+                android:src="@drawable/ic_edit_24px"
+                android:background="@color/lightBrown"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/address_row"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.2"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/map_icon"
+                android:background="@drawable/ic_location_on_24px"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/direction_btn"
+                android:src="@drawable/ic_directions_24px"
+                android:background="@color/lightBrown"
+                android:gravity="center_vertical"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:layout_weight="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone_row"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"/>
+
+            <ImageButton
+                android:id="@+id/phone_msg_btn"
+                android:src="@drawable/ic_chat_bubble_outline_24px"
+                android:background="@color/lightBrown"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"/>
+
+            <ImageButton
+                android:id="@+id/phone_loc_btn"
+                android:src="@drawable/ic_edit_location_24px"
+                android:background="@color/lightBrown"
+                android:layout_marginLeft="8dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone2_row"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_phone2"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"/>
+
+            <ImageButton
+                android:id="@+id/phone2_msg_btn"
+                android:src="@drawable/ic_chat_bubble_outline_24px"
+                android:background="@color/lightBrown"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"/>
+
+            <ImageButton
+                android:id="@+id/phone2_loc_btn"
+                android:src="@drawable/ic_edit_location_24px"
+                android:background="@color/lightBrown"
+                android:layout_marginLeft="8dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"/>
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_student_note"
+        android:fontFamily="sans-serif-light"
+        android:textSize="12sp"
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+
+    </TextView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
