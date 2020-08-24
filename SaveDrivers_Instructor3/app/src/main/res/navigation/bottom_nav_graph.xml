@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph.xml"
+    app:startDestination="@id/navigation_calendar">
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="net.savedrivers.savedrivers_instructor3.ui.calendar.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar"/>
+
+    <fragment
+        android:id="@+id/navigation_students"
+        android:name="net.savedrivers.savedrivers_instructor3.ui.students.StudentsFragment"
+        android:label="Students"
+        tools:layout="@layout/fragment_students"/>
+
+    <fragment
+        android:id="@+id/navigation_instructions"
+        android:name="net.savedrivers.savedrivers_instructor3.ui.instructions.InstructionsFragment"
+        android:label="Instructions"
+        tools:layout="@layout/fragment_instructions"/>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="net.savedrivers.savedrivers_instructor3.ui.notifications.NotificationsFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notifications"/>
+
+</navigation>

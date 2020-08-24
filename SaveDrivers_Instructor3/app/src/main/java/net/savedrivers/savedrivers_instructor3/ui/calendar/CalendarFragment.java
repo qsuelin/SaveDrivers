@@ -1,4 +1,4 @@
-package net.savedrivers.savedrivers_instructor3;
+package net.savedrivers.savedrivers_instructor3.ui.calendar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,9 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import net.savedrivers.savedrivers_instructor3.Appointment;
+import net.savedrivers.savedrivers_instructor3.AppointmentAdapter;
+import net.savedrivers.savedrivers_instructor3.R;
+
 import java.util.Arrays;
 
-public class MainActivityFragment extends Fragment {
+public class CalendarFragment extends Fragment {
 
     private AppointmentAdapter appointmentAdapter;
 
@@ -23,13 +27,13 @@ public class MainActivityFragment extends Fragment {
             new Appointment("4pm", "Fred Cooper", "1301 Olive St, St. Louis","63013", "+13142424232", "", "Please park at the curb and call me 10 minutes before you arrive")
     };
 
-    public MainActivityFragment(){
+    public CalendarFragment(){
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_calendar, container, false);
         appointmentAdapter = new AppointmentAdapter(getActivity(), Arrays.asList(appointments));
         ListView listView = rootView.findViewById(R.id.listview_appointment);
         listView.setAdapter(appointmentAdapter);
