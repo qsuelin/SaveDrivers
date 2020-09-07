@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="net.savedrivers.savedrivers_instructor3.ui.instructions.InstructionsFragment"
-        android:label="Instructions"
+        android:label="Instruction"
         tools:layout="@layout/fragment_instructions"/>
 
     <fragment
