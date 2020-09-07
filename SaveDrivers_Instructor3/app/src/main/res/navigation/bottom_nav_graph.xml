@@ -3,30 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav_graph.xml"
-    app:startDestination="@id/navigation_calendar">
+    app:startDestination="@id/calendarFragment">
 
     <fragment
-        android:id="@+id/navigation_calendar"
+        android:id="@+id/calendarFragment"
         android:name="net.savedrivers.savedrivers_instructor3.ui.calendar.CalendarFragment"
         android:label="Calendar"
         tools:layout="@layout/fragment_calendar"/>
 
     <fragment
-        android:id="@+id/navigation_students"
+        android:id="@+id/studentsFragment"
         android:name="net.savedrivers.savedrivers_instructor3.ui.students.StudentsFragment"
         android:label="Students"
         tools:layout="@layout/fragment_students"/>
 
     <fragment
-        android:id="@+id/navigation_instructions"
+        android:id="@+id/instructionsFragment"
         android:name="net.savedrivers.savedrivers_instructor3.ui.instructions.InstructionsFragment"
         android:label="Instructions"
         tools:layout="@layout/fragment_instructions"/>
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/notificationsFragment"
         android:name="net.savedrivers.savedrivers_instructor3.ui.notifications.NotificationsFragment"
-        android:label="Notification"
+        android:label="Notifications"
         tools:layout="@layout/fragment_notifications"/>
 
 </navigation>
