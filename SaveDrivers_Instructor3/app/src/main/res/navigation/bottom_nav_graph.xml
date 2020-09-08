@@ -15,7 +15,11 @@
         android:id="@+id/studentsFragment"
         android:name="net.savedrivers.savedrivers_instructor3.ui.students.StudentsFragment"
         android:label="Students"
-        tools:layout="@layout/fragment_students"/>
+        tools:layout="@layout/fragment_students">
+        <action
+            android:id="@+id/action_studentsFragment_to_studentDetailFragment"
+            app:destination="@id/studentDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/instructionsFragment"
@@ -28,5 +32,11 @@
         android:name="net.savedrivers.savedrivers_instructor3.ui.notifications.NotificationsFragment"
         android:label="Notifications"
         tools:layout="@layout/fragment_notifications"/>
+
+    <fragment
+        android:id="@+id/studentDetailFragment"
+        android:name="net.savedrivers.savedrivers_instructor3.ui.students.StudentDetailFragment"
+        android:label="Student Detail"
+        tools:layout="@layout/fragment_student_detail"/>
 
 </navigation>
