@@ -3,6 +3,7 @@ package net.savedrivers.savedrivers_instructor3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
@@ -27,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
         // Setting NavController with the BottomNavigationView
         NavigationUI.setupWithNavController(bottomNavView, navController);
 
+        // Initialize appBarConfiguration
+        AppBarConfiguration appBarconfiguration = new AppBarConfiguration.Builder(
+                R.id.calendarFragment, R.id.studentsFragment, R.id.instructionsFragment, R.id.notificationsFragment)
+                .build();
+
+        // Setting up ActionBar with NavController
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarconfiguration);
     }
 
     @Override
