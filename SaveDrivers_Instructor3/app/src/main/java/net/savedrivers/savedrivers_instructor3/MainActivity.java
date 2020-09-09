@@ -1,9 +1,11 @@
 package net.savedrivers.savedrivers_instructor3;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -16,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavView;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // Finding the NavControllerjava.lang.NullPointerException
         //        at net.savedrivers.savedrivers_instructor3.MainActivity.hideBottomNavigation(MainActivity.java:68)
         //        at net.savedrivers.savedrivers_instructor3.ui.students.StudentDetailFragment.onAttach(StudentDetailFragment.java:32)
-        NavController navController = Navigation.findNavController(this, R.id.fragNavHost);
+        navController = Navigation.findNavController(this, R.id.fragNavHost);
         // Setting NavController with the BottomNavigationView
         NavigationUI.setupWithNavController(bottomNavView, navController);
 
@@ -74,7 +77,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        // checkk if the current destination is home
+        if (navController.getGraph().getStartDestination() == navController.getCurrentDestination().getId()) {
+            // check if back is already pressed. If yes, exit the app.
+            if (backPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
 
-        super.onBackPressed();
+            backPressedOnce = true;
+            Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
+
+
+            new Handler().postDelayed(new Runnable() {
+                                          @Override
+                                          public void run() {
+                                              backPressedOnce = false;
+                                          }
+                                      }, 2000);
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 }
