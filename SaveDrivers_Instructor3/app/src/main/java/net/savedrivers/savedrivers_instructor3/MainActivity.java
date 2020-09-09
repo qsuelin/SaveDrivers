@@ -1,20 +1,21 @@
 package net.savedrivers.savedrivers_instructor3;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.Arrays;
-
 public class MainActivity extends AppCompatActivity {
+
+    private BottomNavigationView bottomNavView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Finding the BottomNavigationView
-        BottomNavigationView bottomNavView = findViewById(R.id.bottomNavView);
-        // Finding the NavController
+        bottomNavView = findViewById(R.id.bottomNavView);
+        // Finding the NavControllerjava.lang.NullPointerException
+        //        at net.savedrivers.savedrivers_instructor3.MainActivity.hideBottomNavigation(MainActivity.java:68)
+        //        at net.savedrivers.savedrivers_instructor3.ui.students.StudentDetailFragment.onAttach(StudentDetailFragment.java:32)
         NavController navController = Navigation.findNavController(this, R.id.fragNavHost);
         // Setting NavController with the BottomNavigationView
         NavigationUI.setupWithNavController(bottomNavView, navController);
@@ -57,5 +60,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showBottomeNavigation(){
+        bottomNavView.setVisibility(View.VISIBLE);
+    }
+
+    public void hideBottomNavigation() {
+        bottomNavView.setVisibility(View.GONE);
+    }
+
+    private Boolean backPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
     }
 }
