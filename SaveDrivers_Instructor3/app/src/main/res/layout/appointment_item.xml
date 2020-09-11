@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="8dp"
-    android:background="@color/lightBrown">
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp">
 
     <LinearLayout
-        android:id="@+id/time_column"
-        android:layout_width="52dp"
+        android:id="@+id/time_row"
+        android:layout_width="32dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_time"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:textSize="14dp"
-            android:layout_width="match_parent"
+            android:layout_width="32dp"
             android:layout_height="32dp"
-            android:gravity="center_vertical"
-            android:text="10:20am" />
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="left|center_vertical"
+            android:text="10:30am"
+            android:textSize="8sp" />
 
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/edit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|start"
+                android:background="@null"
+                android:scaleType="center"
+                android:src="@drawable/ic_edit_24px"
+                tools:src="@drawable/ic_edit_24px" />
+        </FrameLayout>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/appointment_block"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="8dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="8dp">
 
         <LinearLayout
             android:id="@+id/name_row"
@@ -43,41 +56,22 @@
 
             <TextView
                 android:id="@+id/tv_name"
-                android:fontFamily="sans-serif-black"
-                android:textSize="18sp"
                 android:layout_width="0dp"
                 android:layout_height="32dp"
                 android:layout_weight="1.0"
-                android:gravity="center_vertical"/>
+                android:fontFamily="sans-serif-black"
+                android:gravity="start|center_vertical"
+                android:text="Alice Hanks"
+                android:textSize="18sp" />
 
             <ImageButton
                 android:id="@+id/camera_btn"
-                android:src="@drawable/ic_camera_alt_24px"
-                android:background="@color/lightBrown"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"
-                android:layout_gravity="center"/>
-
-            <ImageButton
-                android:id="@+id/pay_btn"
-                android:src="@drawable/ic_monetization_on_24px"
-                android:background="@color/lightBrown"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"
-                android:layout_marginLeft="8dp"
-                android:layout_gravity="center_vertical" />
-
-            <ImageButton
-                android:id="@+id/edit_btn"
-                android:src="@drawable/ic_edit_24px"
-                android:background="@color/lightBrown"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"
-                android:layout_marginLeft="8dp"
-                android:layout_gravity="center_vertical"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_forward_ios_24px"
+                android:background="@null"/>
 
         </LinearLayout>
 
@@ -86,12 +80,11 @@
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:orientation="horizontal"
-            android:layout_weight="0.2"
             android:gravity="center_vertical">
 
             <ImageView
                 android:id="@+id/map_icon"
-                android:background="@drawable/ic_location_on_24px"
+                android:src="@drawable/ic_location_on_24px"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
                 android:scaleType="fitXY"
@@ -104,17 +97,18 @@
                 android:layout_weight="1.0"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center_vertical"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:text="1624 Locust St, St.Louis"/>
 
             <ImageButton
                 android:id="@+id/direction_btn"
-                android:src="@drawable/ic_directions_24px"
-                android:background="@color/lightBrown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_weight="0"
                 android:gravity="center_vertical"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"
-                android:layout_weight="0" />
+                android:scaleType="center"
+                android:src="@drawable/ic_directions_24px"
+                android:background="@android:color/transparent"/>
 
         </LinearLayout>
 
@@ -122,6 +116,7 @@
             android:id="@+id/phone_row"
             android:layout_width="match_parent"
             android:layout_height="32dp"
+            android:orientation="horizontal"
             android:gravity="center_vertical">
 
             <TextView
@@ -131,24 +126,16 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:text="314-343-5245"/>
 
             <ImageButton
                 android:id="@+id/phone_msg_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="center"
                 android:src="@drawable/ic_chat_bubble_outline_24px"
-                android:background="@color/lightBrown"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"/>
-
-            <ImageButton
-                android:id="@+id/phone_loc_btn"
-                android:src="@drawable/ic_edit_location_24px"
-                android:background="@color/lightBrown"
-                android:layout_marginLeft="8dp"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"/>
+                android:background="@null"/>
 
         </LinearLayout>
 
@@ -171,35 +158,25 @@
             <ImageButton
                 android:id="@+id/phone2_msg_btn"
                 android:src="@drawable/ic_chat_bubble_outline_24px"
-                android:background="@color/lightBrown"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"/>
-
-            <ImageButton
-                android:id="@+id/phone2_loc_btn"
-                android:src="@drawable/ic_edit_location_24px"
-                android:background="@color/lightBrown"
-                android:layout_marginLeft="8dp"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:scaleType="fitXY"/>
+                android:background="@null"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="center"/>
 
         </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_student_note"
-        android:fontFamily="sans-serif-light"
-        android:textSize="12sp"
-        android:paddingTop="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/tv_student_note"
+            android:fontFamily="sans-serif-light"
+            android:textSize="12sp"
+            android:paddingTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center_vertical">
 
-    </TextView>
+        </TextView>
 
     </LinearLayout>
-
 
 </LinearLayout>
