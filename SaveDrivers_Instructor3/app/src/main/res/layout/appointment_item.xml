@@ -127,7 +127,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
                 android:gravity="center_vertical"
-                android:text="314-343-5245"/>
+                android:text="(314)343-5245"/>
 
             <ImageButton
                 android:id="@+id/phone_msg_btn"

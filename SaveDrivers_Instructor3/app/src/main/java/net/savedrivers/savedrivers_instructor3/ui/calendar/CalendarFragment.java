@@ -53,4 +53,5 @@ public class CalendarFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.search_menu, menu);
     }
+
 }

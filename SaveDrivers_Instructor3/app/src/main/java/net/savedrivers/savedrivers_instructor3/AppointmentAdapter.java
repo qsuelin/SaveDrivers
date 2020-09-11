@@ -1,6 +1,9 @@
 package net.savedrivers.savedrivers_instructor3;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +15,9 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-
 public class AppointmentAdapter extends ArrayAdapter<Appointment> {
+
+    private static final String TAG = "CalenderFragment";
 
     public AppointmentAdapter(Activity context, List<Appointment> appointments) {
         super(context, 0, appointments);
@@ -22,7 +26,7 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Appointment appointment = getItem(position);
+        final Appointment appointment = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(
@@ -37,6 +41,18 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
         tv_address.setText(appointment.getAddress());
         TextView tv_phone = convertView.findViewById(R.id.tv_phone);
         tv_phone.setText(appointment.getPhone());
+        tv_phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                dialIntent.setData(Uri.parse("tel:" + appointment.getPhone()));
+                if (dialIntent.resolveActivity(getContext().getPackageManager()) != null) {
+                    getContext().startActivity(dialIntent);
+                } else {
+                    Log.e(TAG, "Can't resolve app for ACTION_DIAL Intent");
+                }
+            }
+        });
         if (appointment.getPhone2() != "") {
            convertView.findViewById(R.id.phone2_row).setVisibility(View.VISIBLE);
             TextView tv_phone2 = convertView.findViewById(R.id.tv_phone2);
