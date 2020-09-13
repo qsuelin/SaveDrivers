@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -55,6 +56,24 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
                 }
             }
         });
+        //sms intent
+        ImageButton btn_sms = convertView.findViewById(R.id.phone_msg_btn);
+        btn_sms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
+                smsIntent.setData(Uri.parse("smsto:" + phoneNum));
+                // Create sms
+                String sms = "From SaveDrivers: ";
+                // Add sms with key: "sms_body"
+                smsIntent.putExtra("sms_body", sms);
+                if (smsIntent.resolveActivity(getContext().getPackageManager())!= null) {
+                    getContext().startActivity(smsIntent);
+                } else {
+                    Log.e(TAG, "Can't resolve app for ACTION_SENDTO intent");
+                }
+            }
+        });
         if (appointment.getPhone2() != "") {
            convertView.findViewById(R.id.phone2_row).setVisibility(View.VISIBLE);
             TextView tv_phone2 = convertView.findViewById(R.id.tv_phone2);
@@ -73,6 +92,24 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
                     }
                 }
             });
+            //sms intnet
+            ImageButton btn_sms2 = convertView.findViewById(R.id.phone2_msg_btn);
+            btn_sms2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
+                    smsIntent.setData(Uri.parse("smsto:" + phoneNum2));
+                    // Create sms
+                    String sms = "From SaveDrivers: ";
+                    // Add sms with key: "sms_body"
+                    smsIntent.putExtra("sms_body", sms);
+                    if (smsIntent.resolveActivity(getContext().getPackageManager())!= null) {
+                        getContext().startActivity(smsIntent);
+                    } else {
+                        Log.e(TAG, "Can't resolve app for ACTION_SENDTO intent");
+                    }
+                }
+            });
         }
         if (appointment.getStudentNote() != "") {
             TextView tv_student_note = convertView.findViewById(R.id.tv_student_note);
@@ -82,4 +119,5 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
 
         return convertView;
     }
+
 }

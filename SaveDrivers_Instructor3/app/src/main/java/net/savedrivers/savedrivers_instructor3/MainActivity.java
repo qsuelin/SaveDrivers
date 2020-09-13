@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // checkk if the current destination is home
+        // check if the current destination is home
         if (navController.getGraph().getStartDestination() == navController.getCurrentDestination().getId()) {
             // check if back is already pressed. If yes, exit the app.
             if (backPressedOnce) {
