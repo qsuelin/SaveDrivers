@@ -40,12 +40,14 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
         TextView tv_address = convertView.findViewById(R.id.tv_address);
         tv_address.setText(appointment.getAddress());
         TextView tv_phone = convertView.findViewById(R.id.tv_phone);
-        tv_phone.setText(appointment.getPhone());
+        final String phoneNum = appointment.getPhone();
+        tv_phone.setText(phoneNum);
+        // dial intent
         tv_phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent dialIntent = new Intent(Intent.ACTION_DIAL);
-                dialIntent.setData(Uri.parse("tel:" + appointment.getPhone()));
+                dialIntent.setData(Uri.parse("tel:" + phoneNum));
                 if (dialIntent.resolveActivity(getContext().getPackageManager()) != null) {
                     getContext().startActivity(dialIntent);
                 } else {
@@ -56,7 +58,21 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
         if (appointment.getPhone2() != "") {
            convertView.findViewById(R.id.phone2_row).setVisibility(View.VISIBLE);
             TextView tv_phone2 = convertView.findViewById(R.id.tv_phone2);
-            tv_phone2.setText(appointment.getPhone2());
+            final String phoneNum2 = appointment.getPhone2();
+            tv_phone2.setText(phoneNum2);
+            // dial intent
+            tv_phone2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                    dialIntent.setData(Uri.parse("tel:" + phoneNum2));
+                    if (dialIntent.resolveActivity(getContext().getPackageManager()) != null) {
+                        getContext().startActivity(dialIntent);
+                    } else {
+                        Log.e(TAG, "Can't resolve app for ACTION_DIAL Intent");
+                    }
+                }
+            });
         }
         if (appointment.getStudentNote() != "") {
             TextView tv_student_note = convertView.findViewById(R.id.tv_student_note);
