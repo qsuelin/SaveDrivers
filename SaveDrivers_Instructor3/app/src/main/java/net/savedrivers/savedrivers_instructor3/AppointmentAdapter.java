@@ -47,7 +47,7 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
             @Override
             public void onClick(View v) {
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW);
-                mapIntent.setData(Uri.parse("geo:0.0?q=" + address));
+                mapIntent.setData(Uri.parse("google.navigation:q=" + address));
                 if (mapIntent.resolveActivity((getContext().getPackageManager())) != null) {
                     getContext().startActivity(mapIntent);
                 } else {
