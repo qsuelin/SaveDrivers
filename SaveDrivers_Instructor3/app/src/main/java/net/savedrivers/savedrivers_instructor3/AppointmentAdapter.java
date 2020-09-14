@@ -39,10 +39,26 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
         TextView tv_name = convertView.findViewById(R.id.tv_name);
         tv_name.setText(appointment.getName());
         TextView tv_address = convertView.findViewById(R.id.tv_address);
-        tv_address.setText(appointment.getAddress());
+
+        // location intent
+        final String address = appointment.getAddress();
+        tv_address.setText(address);
+        tv_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+                mapIntent.setData(Uri.parse("geo:0.0?q=" + address));
+                if (mapIntent.resolveActivity((getContext().getPackageManager())) != null) {
+                    getContext().startActivity(mapIntent);
+                } else {
+                    Log.e(TAG, "Can't resolve app for ACTION_VIEW intent.");
+                }
+            }
+        });
         TextView tv_phone = convertView.findViewById(R.id.tv_phone);
         final String phoneNum = appointment.getPhone();
         tv_phone.setText(phoneNum);
+
         // dial intent
         tv_phone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +68,7 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
                 if (dialIntent.resolveActivity(getContext().getPackageManager()) != null) {
                     getContext().startActivity(dialIntent);
                 } else {
-                    Log.e(TAG, "Can't resolve app for ACTION_DIAL Intent");
+                    Log.e(TAG, "Can't resolve app for ACTION_DIAL intent");
                 }
             }
         });
@@ -88,7 +104,7 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
                     if (dialIntent.resolveActivity(getContext().getPackageManager()) != null) {
                         getContext().startActivity(dialIntent);
                     } else {
-                        Log.e(TAG, "Can't resolve app for ACTION_DIAL Intent");
+                        Log.e(TAG, "Can't resolve app for ACTION_DIAL intent");
                     }
                 }
             });
