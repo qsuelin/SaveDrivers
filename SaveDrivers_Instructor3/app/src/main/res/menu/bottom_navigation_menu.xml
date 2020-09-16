@@ -9,6 +9,10 @@
         android:title="Students"
         android:icon="@drawable/ic_contacts_24px"/>
 
+    <item android:id="@+id/checklistFragment"
+        android:title="Checklist"
+        android:icon="@drawable/ic_fact_check_24px"/>
+
     <item android:id="@+id/instructionsFragment"
         android:title="Instructions"
         android:icon="@drawable/ic_video_library_24px"/>
