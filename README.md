@@ -84,6 +84,11 @@ The goal of the SaveDriver Mobile application for driving instructors is to simp
 1. Dedicated appointment dashboard by individual instructor
 1. Role-based access control
 
+## Challenges
+1. Calendar Provider API
+1. Firebase
+
+
 # Student Version
 ## Goals
 ## Features
