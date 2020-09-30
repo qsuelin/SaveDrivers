@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize appBarConfiguration
         AppBarConfiguration appBarconfiguration = new AppBarConfiguration.Builder(
-                R.id.calendarFragment, R.id.studentsFragment, R.id.instructionsFragment, R.id.notificationsFragment)
+                R.id.calendarFragment, R.id.studentsFragment, R.id.checklistFragment, R.id.instructionsFragment, R.id.notificationsFragment)
                 .build();
 
         // Setting up ActionBar with NavController
