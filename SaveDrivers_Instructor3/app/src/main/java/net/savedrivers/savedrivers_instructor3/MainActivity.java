@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()) {
             //noinspection SimplifiableIfStatement
             case R.id.action_settings:
-                return true;
+                startActivity(new Intent(this, CalendarActivity.class));
 
             // If profile_btn clicked
             case  R.id.action_profile:
@@ -114,4 +114,9 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+
+
+
+
 }

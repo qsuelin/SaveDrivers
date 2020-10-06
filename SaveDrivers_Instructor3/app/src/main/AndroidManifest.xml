@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".SignInActivity"></activity>
         <activity android:name=".SignOutActivity"></activity>
+        <activity android:name=".CalendarActivity"></activity>
     </application>
 
 </manifest>

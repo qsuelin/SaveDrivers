@@ -22,12 +22,20 @@ public class CalendarFragment extends Fragment {
 
     private AppointmentAdapter appointmentAdapter;
 
+    private static final int MY_PERMISSIONS_REQUEST_READ_CALENDAR = 1000;
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_CALENDAR = 1001;
+
     public static final Appointment[] appointments = {
             new Appointment("7am", "Rose Chandler", "1624 Locust St, St. Louis", "63103", "+13144523673", "+13145847844", " !!time to take exam!!"),
             new Appointment("10:30am", "Jun Stein", "1640 S Lindbergh Blvd, St. Louis", "63131", "+13144442322", "","More practice on parrellel parking."),
             new Appointment("2pm", "Jack Dome", "4401 Hampton Ave, St. Louis", "63109", "+13144218963", "+13141213864", ""),
             new Appointment("4pm", "Fred Cooper", "1301 Olive St, St. Louis","63013", "+13142424232", "", "Please park at the curb and call me 10 minutes before you arrive")
     };
+
+
+
+    // Projection array. Creating indices for this array instead of doing dynamic lookups improves performance.
+
 
     public CalendarFragment(){
     }
@@ -53,5 +61,7 @@ public class CalendarFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.search_menu, menu);
     }
+
+
 
 }

@@ -52,9 +52,7 @@ public class SignInActivity extends AppCompatActivity {
                         break;
                 }
             }
-
         });
-
     }
 
     private void signIn() {
