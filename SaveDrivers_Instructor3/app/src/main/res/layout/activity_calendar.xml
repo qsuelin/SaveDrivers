@@ -19,45 +19,12 @@
         android:text="Get Primary Calendar"
         android:onClick="getPrimaryCalendar"/>
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="Jazz Event"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Add"
-            android:onClick="addEvent"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Remove"
-            android:onClick="removeEvent"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Search"
-            android:onClick="searchEvent"/>
-    </LinearLayout>
-
-
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get All Events"
-        android:onClick="readEvents"/>
+        android:text="Get Events"
+        android:onClick="getInstancesByCalendarByDate"/>
+
 
     <ListView
         android:id="@+id/list_view"
