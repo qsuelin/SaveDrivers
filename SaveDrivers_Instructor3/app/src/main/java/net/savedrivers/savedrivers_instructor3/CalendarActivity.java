@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -153,12 +152,12 @@ public class CalendarActivity extends AppCompatActivity {
         final int PROJECTION_DTSTART_INDEX = 2;
         final int PROJECTION_DESCRIPTION = 3;
 
-        // Specify the date you wnat to search
+        // Specify the date you want to search
         Calendar beginTime = Calendar.getInstance();
-        beginTime.set(2020,9,7,1,0);
+        beginTime.set(2020,9,8,0,0);
         long startMillis = beginTime.getTimeInMillis();
         Calendar endTime = Calendar.getInstance();
-        endTime.set(2020,10,9,1,0);
+        endTime.set(2020,9,9,0,0);
         long endMillis = endTime.getTimeInMillis();
 
         // Run query
@@ -174,10 +173,11 @@ public class CalendarActivity extends AppCompatActivity {
         ContentUris.appendId(builder,startMillis);
         ContentUris.appendId(builder,endMillis);
 
-//        // Submit the query
-//        cur = cr.query(builder.build(), INSTANCE_PROJECTION, selection, selectionsArgs, null);
+        // Submit the query
+        cur = cr.query(builder.build(), INSTANCE_PROJECTION, selection, selectionsArgs, null);
 
-        cur = CalendarContract.Instances.query(cr, INSTANCE_PROJECTION, startMillis, endMillis);
+//        String serachQuery = CalendarContract.Instances.CALENDAR_ID + " = " + calendar_id;
+//        cur = CalendarContract.Instances.query(cr, INSTANCE_PROJECTION, startMillis, endMillis, serachQuery);
 
         ArrayList<String> events = new ArrayList<>();
         if (cur.getCount() < 1) {
@@ -195,7 +195,7 @@ public class CalendarActivity extends AppCompatActivity {
             Log.i("Calendar", "Event:  " + title);
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(beginVal);
-            DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
             String startDatetime = formatter.format(calendar.getTime());
             Log.i("Calendar", "Date: " + startDatetime);
 
